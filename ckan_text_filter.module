@@ -68,7 +68,7 @@ function ckan_text_filter_filter_info()
 	return [
 		'ckan_dataset_table' => [
 			'title'           => 'CKAN dataset table syntax',
-			'description'     => 'Embeds a CKAN dataset as an HTML table',
+			'description'     => 'Converts {ckan_table:$resource_id} into an HTML table pulled from the CKAN dataset api',
 			'process callback'=> '_ckan_dataset_table'
 		]
 	];
