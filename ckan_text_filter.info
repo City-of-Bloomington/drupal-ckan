@@ -1,0 +1,4 @@
+name = CKAN Text Filter
+description = Allows embedding of CKAN dataset feeds as HTML tables in node content
+core = 7.x
+configure = admin/config/services/ckan_text_filter
