@@ -126,4 +126,5 @@ function _ckan_dataset_table($text, $filter, $format, $langcode, $cache, $cache_
 			return preg_replace($syntax, $html, $text);
 		}
 	}
+	return $text;
 }
