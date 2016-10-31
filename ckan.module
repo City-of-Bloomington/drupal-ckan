@@ -1,9 +1,9 @@
 <?php
 /**
  * @copyright 2014-2016 City of Bloomington, Indiana
- * @license http://www.gnu.org/licenses/old-licenses/gpl-2.0.txt GNU/GPL 2, see LICENSE.txt
+ * @license https://www.gnu.org/licenses/agpl.txt GNU/AGPL 3, see LICENSE.txt
  */
-function ckan_text_filter_admin_form()
+function ckan_admin_form()
 {
 	return system_settings_form([
 		'ckan_url'=>[
@@ -21,7 +21,7 @@ function ckan_text_filter_admin_form()
  *
  * @implements hook_admin_validate()
  */
-function ckan_text_filter_admin_form_validate($form, &$form_state)
+function ckan_admin_form_validate($form, &$form_state)
 {
 	// Make sure we can get back the media sizes
 	$url = $form_state['values']['ckan_url'].'/api/3/action/package_list';
@@ -32,14 +32,14 @@ function ckan_text_filter_admin_form_validate($form, &$form_state)
 	}
 }
 
-function ckan_text_filter_menu()
+function ckan_menu()
 {
 	return [
-		'admin/config/services/ckan_text_filter' => [
+		'admin/config/services/ckan' => [
 			'title'           => 'CKAN settings',
 			'description'     => 'Settings for the CKAN module',
 			'page callback'   => 'drupal_get_form',
-			'page arguments'  => ['ckan_text_filter_admin_form'],
+			'page arguments'  => ['ckan_admin_form'],
 			'access arguments'=> ['administer site configuration'],
 			'type'            => MENU_NORMAL_ITEM
 		]
@@ -49,10 +49,10 @@ function ckan_text_filter_menu()
 /**
  * @implements hook_filter_info()
  */
-function ckan_text_filter_filter_info()
+function ckan_filter_info()
 {
 	return [
-		'ckan_dataset_table' => [
+		'ckan_resource_table' => [
 			'title'           => 'CKAN resource table syntax',
 			'description'     => 'Converts {ckan_table:$resource_id} into an HTML table pulled from the CKAN dataset api',
 			'process callback'=> '_ckan_resource_table'
