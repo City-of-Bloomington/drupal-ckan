@@ -1,21 +1,7 @@
 <?php
 /**
- * @copyright 2014 City of Bloomington, Indiana
+ * @copyright 2014-2016 City of Bloomington, Indiana
  * @license http://www.gnu.org/licenses/old-licenses/gpl-2.0.txt GNU/GPL 2, see LICENSE.txt
- * @author Cliff Ingham <inghamn@bloomington.in.gov>
- *
- * This module is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 2 of the License, or
- * (at your option) any later version.
- *
- * This module is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 function ckan_text_filter_admin_form()
 {
@@ -67,9 +53,9 @@ function ckan_text_filter_filter_info()
 {
 	return [
 		'ckan_dataset_table' => [
-			'title'           => 'CKAN dataset table syntax',
+			'title'           => 'CKAN resource table syntax',
 			'description'     => 'Converts {ckan_table:$resource_id} into an HTML table pulled from the CKAN dataset api',
-			'process callback'=> '_ckan_dataset_table'
+			'process callback'=> '_ckan_resource_table'
 		]
 	];
 }
@@ -83,7 +69,7 @@ function ckan_text_filter_filter_info()
  *
  * @returns string
  */
-function _ckan_dataset_table($text, $filter, $format, $langcode, $cache, $cache_id)
+function _ckan_resource_table($text, $filter, $format, $langcode, $cache, $cache_id)
 {
 	$syntax = '/{ckan_table:([0-9a-f\-]+)}/';
 	$url = variable_get('ckan_url');
