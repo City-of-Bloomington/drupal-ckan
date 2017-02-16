@@ -1,5 +1,0 @@
-name = CKAN Integration
-description = Allows embedding of CKAN data into node content
-core = 7.x
-configure = admin/config/services/ckan
-dependencies[] = filter
