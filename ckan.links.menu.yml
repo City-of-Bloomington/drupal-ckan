@@ -1,0 +1,7 @@
+---
+ckan.settings:
+  title: 'CKAN Settings'
+  description: 'Settings for the CKAN Module'
+  parent: system.admin_config_services
+  route_name: ckan.settings
+...

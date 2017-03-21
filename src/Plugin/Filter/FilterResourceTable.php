@@ -27,7 +27,9 @@ class FilterResourceTable extends FilterBase
     public function process($text, $lang)
     {
         $syntax = '/{ckan_table:([0-9a-f\-]+)}/';
-        $url = Settings::get('ckan_url');
+
+        $config = \Drupal::config('ckan.settings');
+        $url    = $config->get('ckan_url');
 
         if (preg_match($syntax, $text, $matches)) {
             $resource_id = $matches[1];

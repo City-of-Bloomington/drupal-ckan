@@ -1,0 +1,9 @@
+---
+ckan.settings:
+  path: '/admin/config/ckan/settings'
+  defaults:
+    _form: '\Drupal\ckan\Form\SettingsForm'
+    _title: 'CKAN Settings'
+  requirements:
+    _permission: 'administer site configuration'
+...
