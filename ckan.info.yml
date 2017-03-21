@@ -3,3 +3,4 @@ description: Allows embedding of CKAN data into node content
 package: COB
 type: module
 core: 8.x
+configure: ckan.settings
