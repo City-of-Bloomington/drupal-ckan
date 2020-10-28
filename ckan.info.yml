@@ -1,6 +1,9 @@
-name: CKAN Integration
-description: Allows embedding of CKAN data into node content
-package: COB
-type: module
-core: 8.x
-configure: ckan.settings
+---
+name:        'CKAN Integration'
+description: 'Allows embedding of CKAN data into node content'
+package:     'COB'
+type:        'module'
+core:        '8.x'
+configure:   'ckan.settings'
+core_version_requirement: '^8||^9'
+...
